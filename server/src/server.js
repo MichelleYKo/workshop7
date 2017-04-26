@@ -1,3 +1,6 @@
+var mongo_express = require('mongo-express/lib/middleware');
+// Import the default Mongo Express configuration
+var mongo_express_config = require('mongo-express/config.default.js');
 // Imports the express Node module.
 var express = require('express');
 // Creates an Express server.
@@ -13,10 +16,6 @@ var getCollection = database.getCollection;
 var StatusUpdateSchema = require('./schemas/statusupdate.json');
 var CommentSchema = require('./schemas/comment.json');
 var validate = require('express-jsonschema').validate;
-var mongo_express = require('mongo-express/lib/middleware');
-// Import the default Mongo Express configuration
-var mongo_express_config = require('mongo-express/config.default.js');
-
 
 app.use(bodyParser.text());
 app.use(bodyParser.json());
